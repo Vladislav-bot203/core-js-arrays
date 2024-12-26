@@ -7,19 +7,6 @@
  *                                                                                            *
  ******************************************************************************************** */
 
-/**
- * Creates an array of integers from the specified start to end (inclusive).
- *
- * @param {number} start - The first number of an array.
- * @param {number} end - The last number of an array.
- * @return {array} - An array of integers.
- *
- * @example
- *    getIntervalArray(1, 5)  => [ 1, 2, 3, 4, 5 ]
- *    getIntervalArray(-2, 2)  => [ -2, -1, 0, 1, 2 ]
- *    getIntervalArray(0, 100) => [ 0, 1, 2, ..., 100 ]
- *    getIntervalArray(3, 3) => [ 3 ]
- */
 function getIntervalArray(start, end) {
   return Array.from({ length: end - start + 1 }, (_, i) => start + i);
 }
@@ -37,8 +24,17 @@ function getIntervalArray(start, end) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  if (arr1.length > arr2.length) {
+    return arr1.map((elem, id) => {
+      if (typeof arr2[id] !== 'number') return elem;
+      return elem + arr2[id];
+    });
+  }
+  return arr2.map((elem, id) => {
+    if (typeof arr1[id] !== 'number') return elem;
+    return elem + arr1[id];
+  });
 }
 
 /**
