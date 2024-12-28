@@ -63,19 +63,9 @@ function getHead(arr, n) {
   return arr.slice(0, n);
 }
 
-/**
- * Returns the n last items of the specified array.
- *
- * @param {array} arr - The input array.
- * @param {number} n - Number of items.
- *
- * @example
- *    getTail([ 1, 3, 4, 5 ], 2) => [ 4, 5 ]
- *    getTail([ 'a', 'b', 'c', 'd'], 3) => [ 'b', 'c', 'd' ]
- *    getTail([ 'a', 'b', 'c', 'd'], 0) => []
- */
-function getTail(/* arr, n */) {
-  throw new Error('Not implemented');
+function getTail(arr, n) {
+  if (n === 0) return [];
+  return arr.slice(-n);
 }
 
 /**
