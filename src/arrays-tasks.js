@@ -55,34 +55,12 @@ function isValueEqualsIndex(arr) {
   return arr.some((elem, id) => elem === id);
 }
 
-/**
- * Inserts the item into specified array at specified index.
- *
- * @param {array} arr - The input array.
- * @param {any} item - The item to insert.
- * @param {number} index - Specified index.
- *
- * @example
- *    insertItem([ 1, 3, 4, 5 ], 2, 1)  => [ 1, 2, 3, 4, 5 ]
- *    insertItem([ 1, 'b', 'c'], 'x', 0) => [ 'x', 1, 'b', 'c' ]
- */
 function insertItem(arr, item, index) {
   return arr.splice(index, 0, item);
 }
 
-/**
- * Returns the n first items of the specified array.
- *
- * @param {array} arr - The input array.
- * @param {number} n - Number of items.
- *
- * @example
- *    getHead([ 1, 3, 4, 5 ], 2) => [ 1, 3 ]
- *    getHead([ 'a', 'b', 'c', 'd'], 3) => [ 'a', 'b', 'c' ]
- *    getHead([ 'a', 'b', 'c', 'd'], 0) => []
- */
-function getHead(/* arr, n */) {
-  throw new Error('Not implemented');
+function getHead(arr, n) {
+  return arr.slice(0, n);
 }
 
 /**
