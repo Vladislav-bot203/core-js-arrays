@@ -47,18 +47,8 @@ function getAverage(arr) {
   );
 }
 
-/**
- * Checks if all strings in an array have the same length.
- *
- * @param {array} arr - The array of strings to be checked.
- * @return {boolean} - True if all strings have the same length, false otherwise.
- *
- * @example
- *    isSameLength(['orange', 'banana', 'cherry']) => true
- *    isSameLength(['cat', 'dog', 'elephant']) => false
- */
-function isSameLength(/* arr */) {
-  throw new Error('Not implemented');
+function isSameLength(arr) {
+  return arr.length === arr.filter((item) => item.length === arr[0].length).length;
 }
 
 /**
