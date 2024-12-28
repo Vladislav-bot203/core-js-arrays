@@ -11,19 +11,6 @@ function getIntervalArray(start, end) {
   return Array.from({ length: end - start + 1 }, (_, i) => start + i);
 }
 
-/**
- * Returns a new array where each element is the sum of the corresponding elements
- * from two arrays. Arrays can have different lengths.
- *
- * @param {array} arr1 - The first array.
- * @param {array} arr2 - The second array.
- * @return {array} - An array containing the sum of corresponding elements.
- *
- * @example
- *    sumArrays([1, 2, 3], [4, 5, 6]) => [5, 7, 9]
- *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
- *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
- */
 function sumArrays(arr1, arr2) {
   if (arr1.length > arr2.length) {
     return arr1.map((elem, id) => {
@@ -37,20 +24,8 @@ function sumArrays(arr1, arr2) {
   });
 }
 
-/**
- * Returns an index of the specified element in array or -1 if element is not found.
- *
- * @param {array} arr - The input array.
- * @param {any} value - Element to search.
- * @return {number} - An index of the specified element.
- *
- * @example
- *    findElement(['Ace', 10, true], 10) => 1
- *    findElement(['Array', 'Number', 'string'], 'Date') => -1
- *    findElement([0, 1, 2, 3, 4, 5], 5) => 5
- */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  return arr.indexOf(value);
 }
 
 /**
