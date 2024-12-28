@@ -48,7 +48,7 @@ function getAverage(arr) {
 }
 
 function isSameLength(arr) {
-  return arr.length === arr.filter((item) => item.length === arr[0].length).length;
+  return arr.every((elem) => elem.length === arr[0].length);
 }
 
 /**
