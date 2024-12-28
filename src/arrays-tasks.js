@@ -161,20 +161,14 @@ function getElementByIndices(/* arr, indices */) {
   throw new Error('Not implemented');
 }
 
-/**
- * Returns the number of all falsy values in the specified array.
- *
- * @param {array} arr - The input array.
- * @return {number} - The number of all falsy values.
- *
- * @example
- *  getFalsyValuesCount([]) => 0
- *  getFalsyValuesCount([ 1, '', 3 ]) => 1
- *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
- *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
- */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  return arr.reduce((accum, curr) => {
+    let a = accum;
+    if (!curr) {
+      a += 1;
+    }
+    return a;
+  }, 0);
 }
 
 /**
