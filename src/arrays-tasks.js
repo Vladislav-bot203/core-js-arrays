@@ -36,18 +36,8 @@ function removeFalsyValues(arr) {
   return arr.filter((elem) => Boolean(elem) === true);
 }
 
-/**
- * Returns an array containing the lengths of each string in a specified array of strings.
- *
- * @param {array} arr - The input array.
- * @return {array} - The array of string lengths.
- *
- * @example
- *    getStringsLength([ '', 'a', 'bc', 'def', 'ghij' ]) => [ 0, 1, 2, 3, 4 ]
- *    getStringsLength([ 'angular', 'react', 'ember' ]) => [ 7, 5, 5 ]
- */
-function getStringsLength(/* arr */) {
-  throw new Error('Not implemented');
+function getStringsLength(arr) {
+  return arr.map((elem) => elem.length);
 }
 
 /**
