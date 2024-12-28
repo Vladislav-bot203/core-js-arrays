@@ -76,20 +76,8 @@ function toStringList(arr) {
   return arr.join();
 }
 
-/**
- * Returns array containing only unique values from the specified array.
- *
- * @param {array} arr - The input array.
- * @return {array} - The array with unique values.
- *
- * @example
- *   distinct([ 1, 2, 3, 3, 2, 1 ]) => [ 1, 2, 3 ]
- *   distinct([ 'a', 'a', 'a', 'a' ])  => [ 'a' ]
- *   distinct([ 1, 1, 2, 2, 3, 3, 4, 4]) => [ 1, 2, 3, 4]
- *   distinct([]) => []
- */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  return Array.from(new Set(arr));
 }
 
 /**
@@ -105,8 +93,9 @@ function distinct(/* arr */) {
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(/* n, size */) {
-  throw new Error('Not implemented');
+function createNDimensionalArray(n, size) {
+  if (n === 1) return new Array(size).fill(0);
+  return new Array(size).fill(createNDimensionalArray(n - 1, size));
 }
 
 /**
