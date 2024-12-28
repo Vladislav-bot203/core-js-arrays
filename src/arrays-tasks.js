@@ -277,22 +277,13 @@ function findLongestIncreasingSubsequence(/* nums */) {
   throw new Error('Not implemented');
 }
 
-/**
- * Propagates every item in sequence its position times
- * Returns an array that consists of: one first item, two second items, three third items etc.
- *
- * @param {array} arr - The input array
- * @return {array}
- *
- * @example :
- *  propagateItemsByPositionIndex([]) => []
- *  propagateItemsByPositionIndex([ 1 ]) => [ 1 ]
- *  propagateItemsByPositionIndex([ 'a', 'b' ]) => [ 'a', 'b','b' ]
- *  propagateItemsByPositionIndex([ 'a', 'b', 'c', null ]) => [ 'a', 'b', 'b', 'c', 'c', 'c',  null, null, null, null ]
- *  propagateItemsByPositionIndex([ 1,2,3,4,5 ]) => [ 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5 ]
- */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
+function propagateItemsByPositionIndex(arr) {
+  return arr
+    .map((elem, id) => {
+      if (id === 0) return elem;
+      return new Array(id + 1).fill(elem);
+    })
+    .flat(Infinity);
 }
 
 /**
@@ -329,25 +320,6 @@ function sortDigitNamesByNumericOrder(/* arr */) {
   throw new Error('Not implemented');
 }
 
-/**
- * Swaps the head and tail of the specified array:
- * the head (first half) of array move to the end, the tail (last half) move to the start.
- * The middle element (if exists) leave on the same position. *
- *
- * @param {array} arr - The input array.
- * @return {array} - The swapped array.
- *
- * @example
- *   [ 1, 2, 3, 4, 5 ]   =>  [ 4, 5, 3, 1, 2 ]
- *    \----/   \----/
- *     head     tail
- *
- *   swapHeadAndTail([ 1, 2 ]) => [ 2, 1 ]
- *   swapHeadAndTail([ 1, 2, 3, 4, 5, 6, 7, 8 ]) =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]
- *   swapHeadAndTail([ 1 ]) => [ 1 ]
- *   swapHeadAndTail([]) => []
- *
- */
 function swapHeadAndTail(arr) {
   const mid = arr.length / 2;
   return [...arr.slice(-mid), ...arr.slice(mid, -mid), ...arr.slice(0, mid)];
