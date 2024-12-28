@@ -116,19 +116,8 @@ function doubleArray(/* arr */) {
   throw new Error('Not implemented');
 }
 
-/**
- * Concatenates all elements from specified array into single string with ',' delimiter.
- *
- * @param {array} arr - The input array.
- * @return {string} - The concatenated string.
- *
- * @example
- *    toStringList([0, false, 'cat', NaN, true, '']) => '0,false,cat,NaN,true,'
- *    toStringList([1, 2, 3, 4, 5]) => '1,2,3,4,5'
- *    toStringList(['rock', 'paper', 'scissors']) => 'rock,paper,scissors'
- */
-function toStringList(/* arr */) {
-  throw new Error('Not implemented');
+function toStringList(arr) {
+  return arr.join();
 }
 
 /**
