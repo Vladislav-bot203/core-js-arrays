@@ -68,20 +68,8 @@ function getTail(arr, n) {
   return arr.slice(-n);
 }
 
-/**
- * Returns the doubled array - elements of the specified array
- * are repeated twice using original order.
- *
- * @param {array} arr - The input array.
- * @return {array} - The doubled array.
- *
- * @example
- *    doubleArray(['Ace', 10, true])  => ['Ace', 10, true, 'Ace', 10, true]
- *    doubleArray([0, 1, 2, 3, 4, 5]) => [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
- *    doubleArray([]) => []
- */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
+function doubleArray(arr) {
+  return arr.concat(arr);
 }
 
 function toStringList(arr) {
