@@ -246,20 +246,13 @@ function getMaxItems(/* arr, n */) {
   throw new Error('Not implemented');
 }
 
-/**
- * Finds and returns an array containing only the common elements found in two arrays.
- *
- * @param {array} arr1 - The first array.
- * @param {array} arr2 - The second array.
- * @return {array} - An array containing common elements.
- *
- * @example
- *    findCommonElements([1, 2, 3], [2, 3, 4]) => [ 2, 3 ]
- *    findCommonElements(['a', 'b', 'c'], ['b', 'c', 'd']) => [ 'b', 'c' ]
- *    findCommonElements([1, 2, 3], ['a', 'b', 'c']) => []
- */
-function findCommonElements(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function findCommonElements(arr1, arr2) {
+  return arr1.reduce((accum, curr) => {
+    if (arr2.includes(curr)) {
+      accum.push(curr);
+    }
+    return accum;
+  }, []);
 }
 
 /**
