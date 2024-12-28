@@ -89,38 +89,28 @@ function flattenArray(nestedArray) {
   return nestedArray.flat(Infinity);
 }
 
-/**
- * Projects each element of the specified array to a sequence
- * and flattens the resulting sequences into one array.
- *
- * @param {array} arr - The input array
- * @param {Function} childrenSelector - A transform function to apply to each element
- *                                     that returns an array of children
- * @return {array} - The flatted array
- *
- * @example
- *   selectMany([[1, 2], [3, 4], [5, 6]], (x) => x) =>   [ 1, 2, 3, 4, 5, 6 ]
- *   selectMany(['one','two','three'], (x) => x.split('')) =>   ['o','n','e','t','w','o','t','h','r','e','e']
- */
 function selectMany(arr, childrenSelector) {
   return arr.flatMap(childrenSelector);
 }
 
-/**
- * Every month, you record your income and expenses.
- * Expenses may be greater than income.
- * You need to calculate the final balance.
- *
- * @param {array} arr - The input array [[income, expence], ...]
- * @return {number} - The final balance.
- *
- * @example
- *   calculateBalance([ [ 10, 8 ], [ 5, 1 ] ]) => (10 - 8) + (5 - 1) = 2 + 4 = 6
- *   calculateBalance([ [ 10, 8 ], [ 1, 5 ] ])  => (10 - 8) + (1 - 5) = 2 + -4 = -2
- *   calculateBalance([]) => 0
- */
-function calculateBalance(/* arr */) {
-  throw new Error('Not implemented');
+function calculateBalance(arr) {
+  if (arr.length === 0) return 0;
+  return arr.flat(Infinity).reduce((accum, item, id) => {
+    let a = accum;
+    if (id === 0) {
+      a += item;
+    }
+    if (id === 1) {
+      a -= item;
+    }
+    if (id === 2) {
+      a += item;
+    }
+    if (id === 3) {
+      a -= item;
+    }
+    return a;
+  });
 }
 
 /**
