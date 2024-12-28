@@ -228,22 +228,8 @@ function getHexRGBValues(/* arr */) {
   throw new Error('Not implemented');
 }
 
-/**
- * Returns the n largest values from the specified array
- *
- * @param {array} arr - The input array
- * @param {number} n - Number of maximum values.
- * @return {array} - n largest values.
- *
- * @example
- *   getMaxItems([], 5) => []
- *   getMaxItems([ 1, 2 ], 1) => [ 2]
- *   getMaxItems([ 2, 3, 1 ], 2) => [ 3, 2]
- *   getMaxItems([ 10, 2, 7, 5, 3, -5 ], 3) => [ 10, 7, 5 ]
- *   getMaxItems([ 10, 10, 10, 10 ], 3) => [ 10, 10, 10 ]
- */
-function getMaxItems(/* arr, n */) {
-  throw new Error('Not implemented');
+function getMaxItems(arr, n) {
+  return arr.sort((a, b) => b - a).slice(0, n);
 }
 
 function findCommonElements(arr1, arr2) {
