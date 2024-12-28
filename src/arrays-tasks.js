@@ -199,19 +199,13 @@ function getIdentityMatrix(/* n */) {
   throw new Error('Not implemented');
 }
 
-/**
- * Returns an array containing indices of odd elements in the input array.
- *
- * @param {array} numbers - The array of numbers.
- * @return {array} - An array containing indices of odd elements.
- *
- * @example
- *    getIndicesOfOddNumbers([1, 2, 3, 4, 5]) => [0, 2, 4]
- *    getIndicesOfOddNumbers([2, 4, 6, 8, 10]) => []
- *    getIndicesOfOddNumbers([11, 22, 33, 44, 55]) => [0, 2, 4]
- */
-function getIndicesOfOddNumbers(/* numbers */) {
-  throw new Error('Not implemented');
+function getIndicesOfOddNumbers(numbers) {
+  return numbers.reduce((accum, curr, id) => {
+    if (curr % 2 !== 0) {
+      accum.push(id);
+    }
+    return accum;
+  }, []);
 }
 
 /**
