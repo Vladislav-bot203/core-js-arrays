@@ -40,22 +40,11 @@ function getStringsLength(arr) {
   return arr.map((elem) => elem.length);
 }
 
-/**
- * Returns the average of all items in the specified array of numbers.
- * The result should be rounded to two decimal places.
- *
- * @param {array} arr - The input array
- * @return {number} - The average of all items
- *
- * @example
- *   getAverage([]) => 0
- *   getAverage([ 1, 2, 3 ]) => 2
- *   getAverage([ -1, 1, -1, 1 ]) => 0
- *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
- *   getAverage([ 2, 3, 3 ])  => 2,67
- */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  if (arr.length === 0) return 0;
+  return parseFloat(
+    (arr.reduce((accum, item) => accum + item, 0) / arr.length).toFixed(2)
+  );
 }
 
 /**
