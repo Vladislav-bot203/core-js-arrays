@@ -51,19 +51,8 @@ function isSameLength(arr) {
   return arr.every((elem) => elem.length === arr[0].length);
 }
 
-/**
- * Checks if there are elements in the array where the value is equal to its index.
- *
- * @param {array} arr - The array of elements to be checked.
- * @return {boolean} - True if there are elements with value equal to their index, false otherwise.
- *
- * @example
- *    isValueEqualsIndex([0, 1, 2, 3, 4]) => true
- *    isValueEqualsIndex([2, 1, 0, 4, 5]) => true
- *    isValueEqualsIndex([10, 20, 30, 40, 50]) => false
- */
-function isValueEqualsIndex(/* arr */) {
-  throw new Error('Not implemented');
+function isValueEqualsIndex(arr) {
+  return arr.some((elem, id) => elem === id);
 }
 
 /**
