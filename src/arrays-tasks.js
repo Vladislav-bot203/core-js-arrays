@@ -28,38 +28,12 @@ function findElement(arr, value) {
   return arr.indexOf(value);
 }
 
-/**
- * Returns a number of all occurrences of the specified item in an array.
- *
- * @param {array} arr - The input array.
- * @param {any} item - Element to search.
- * @return {number} - Number of found items.
- *
- * @example
- *    findAllOccurrences([ 0, 0, 1, 1, 1, 2 ], 1) => 3
- *    findAllOccurrences([ 1, 2, 3, 4, 5 ], 0) => 0
- *    findAllOccurrences([ 'a','b','c','c' ], 'c') => 2
- *    findAllOccurrences([ null, undefined, null ], null) => 2
- *    findAllOccurrences([ true, 0, 1, 'true' ], true) => 1
- */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, item) {
+  return arr.filter((elem) => elem === item).length;
 }
 
-/**
- * Removes falsy values from the specified array.
- * Falsy values: false, null, 0, "", undefined, and NaN.
- *
- * @param {array} arr - The input array.
- * @return {array} - The array without falsy values.
- *
- * @example
- *    removeFalsyValues([ 0, false, 'cat', NaN, true, '' ]) => [ 'cat', true ]
- *    removeFalsyValues([ 1, 2, 3, 4, 5, 'false' ]) => [ 1, 2, 3, 4, 5, 'false' ]
- *    removeFalsyValues([ false, 0, NaN, '', undefined ]) => [ ]
- */
-function removeFalsyValues(/* arr */) {
-  throw new Error('Not implemented');
+function removeFalsyValues(arr) {
+  return arr.filter((elem) => Boolean(elem) === true);
 }
 
 /**
