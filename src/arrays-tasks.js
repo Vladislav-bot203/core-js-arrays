@@ -80,37 +80,13 @@ function distinct(arr) {
   return Array.from(new Set(arr));
 }
 
-/**
- * Creates an n-dimensional array and fills it with zeros.
- *
- * @param {number} n - Depth of outter array (n > 0).
- * @param {number} size - Length of all arrays (size > 0).
- * @return {array} - The n-dimensional array filled with zeros.
- *
- * @example
- *    createNDimensionalArray(2, 3) => [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
- *    createNDimensionalArray(3, 2) => [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]
- *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
- *    createNDimensionalArray(1, 1) => [0]
- */
 function createNDimensionalArray(n, size) {
   if (n === 1) return new Array(size).fill(0);
   return new Array(size).fill(createNDimensionalArray(n - 1, size));
 }
 
-/**
- * Flattens a nested array into a single-level array.
- *
- * @param {array} nestedArray - The nested array to be flattened.
- * @return {array} - A single-level array.
- *
- * @example
- *    flattenArray([1, [2, [3, 4], 5], 6]) => [1, 2, 3, 4, 5, 6]
- *    flattenArray(['a', ['b', ['c', 'd'], 'e'], 'f']) => ['a', 'b', 'c', 'd', 'e', 'f']
- *    flattenArray([1, 2, 3, 4]) => [1, 2, 3, 4]
- */
-function flattenArray(/* nestedArray */) {
-  throw new Error('Not implemented');
+function flattenArray(nestedArray) {
+  return nestedArray.flat(Infinity);
 }
 
 /**
