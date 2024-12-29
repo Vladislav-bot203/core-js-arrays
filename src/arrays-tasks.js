@@ -151,26 +151,15 @@ function getFalsyValuesCount(arr) {
   }, 0);
 }
 
-/**
- * Creates an identity matrix of the specified size.
- *
- * @param {number} n - A size of the matrix.
- * @return {array} - An identity matrix.
- *
- * @example
- *     getIdentityMatrix(1)  => [[1]]
- *
- *     getIdentityMatrix(2) => [[1,0],
- *                             [0,1]]
- *
- *                              [[1,0,0,0,0],
- *                              [0,1,0,0,0],
- *     getIdentityMatrix(5) =>  [0,0,1,0,0],
- *                              [0,0,0,1,0],
- *                              [0,0,0,0,1]]
- */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  const arr = Array.from({ length: n }, () =>
+    Array.from({ length: n }, () => 0)
+  );
+  return arr.map((item, index) => {
+    const newArr = item;
+    newArr[index] = 1;
+    return newArr;
+  });
 }
 
 function getIndicesOfOddNumbers(numbers) {
