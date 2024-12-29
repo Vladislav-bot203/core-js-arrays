@@ -198,19 +198,22 @@ function findCommonElements(arr1, arr2) {
   }, []);
 }
 
-/**
- * Finds the length of the longest increasing and uninterrupted subsequence of a given array of integers.
- *
- * @param {array} nums - The array of integers.
- * @return {number} - The length of the longest increasing subsequence.
- *
- * @example
- *    findLongestIncreasingSubsequence([10, 22, 9, 33, 21, 50, 41, 60, 80]) => longest is [41, 60, 80] => 3
- *    findLongestIncreasingSubsequence([3, 10, 2, 1, 20]) => longest is [3, 10] and [1, 20] => 2
- *    findLongestIncreasingSubsequence([50, 3, 10, 7, 40, 80]) => longest is [7, 40, 80] => 3
- */
-function findLongestIncreasingSubsequence(/* nums */) {
-  throw new Error('Not implemented');
+function findLongestIncreasingSubsequence(nums) {
+  const dp = new Array(nums.length).fill(1);
+  let breaking = true;
+  return Math.max(
+    ...nums.reduce((lenArr, _, id, num) => {
+      const len = lenArr;
+      len[id] = num.slice(id).reduce((sum, item, i, part) => {
+        let res = sum;
+        if (i === 0) breaking = true;
+        if (item < part[i + 1] && breaking) res += 1;
+        if (item > part[i + 1]) breaking = false;
+        return res;
+      }, 1);
+      return len;
+    }, dp)
+  );
 }
 
 function propagateItemsByPositionIndex(arr) {
