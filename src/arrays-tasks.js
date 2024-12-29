@@ -113,20 +113,19 @@ function calculateBalance(arr) {
   });
 }
 
-/**
- * Breaks an array into chunks of the specified size.
- *
- * @param {array} arr - The array to be broken into chunks.
- * @param {number} chunkSize - The size of each chunk.
- * @return {array} - An array of chunks.
- *
- * @example
- *    createChunks([1, 2, 3, 4, 5, 6, 7], 3) => [[1, 2, 3], [4, 5, 6], [7]]
- *    createChunks(['a', 'b', 'c', 'd', 'e'], 2) => [['a', 'b'], ['c', 'd'], ['e']]
- *    createChunks([10, 20, 30, 40, 50], 1) => [[10], [20], [30], [40], [50]]
- */
-function createChunks(/* arr, chunkSize */) {
-  throw new Error('Not implemented');
+function createChunks(arr, chunkSize) {
+  return arr.reduce((resultArray, currentItem, index) => {
+    const chunkIndex = Math.floor(index / chunkSize);
+    const result = resultArray;
+
+    if (!result[chunkIndex]) {
+      result[chunkIndex] = [];
+    }
+
+    result[chunkIndex].push(currentItem);
+
+    return result;
+  }, []);
 }
 
 /**
@@ -270,19 +269,6 @@ function shiftArray(/* arr, n */) {
   throw new Error('Not implemented');
 }
 
-/**
- * Sorts digit names.
- *
- * @param {array} arr - The input array.
- * @return {array} - Sorted array.
- *
- * @example
- *   sortDigitNamesByNumericOrder([]) => []
- *   sortDigitNamesByNumericOrder([ 'nine','one' ]) => [ 'one', 'nine' ]
- *   sortDigitNamesByNumericOrder([ 'one','two','three' ]) => [ 'one','two', 'three' ]
- *   sortDigitNamesByNumericOrder([ 'nine','eight','nine','eight' ]) => [ 'eight','eight','nine','nine']
- *   sortDigitNamesByNumericOrder([ 'one','one','one','zero' ]) => [ 'zero','one','one','one' ]
- */
 function sortDigitNamesByNumericOrder(arr) {
   const mapper = [
     'zero',
