@@ -128,20 +128,13 @@ function createChunks(arr, chunkSize) {
   }, []);
 }
 
-/**
- * Generates an array of odd numbers of the specified length.
- *
- * @param {number} len - The length of an array.
- * @return {array} - An array of odd numbers.
- *
- * @example
- *    generateOdds(0) => []
- *    generateOdds(1) => [ 1 ]
- *    generateOdds(2) => [ 1, 3 ]
- *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
- */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  if (len === 0) return [];
+  if (len === 1) return [1];
+  return Array(len * 2)
+    .fill(0)
+    .map((_, id) => id)
+    .filter((item) => item % 2 !== 0);
 }
 
 /**
