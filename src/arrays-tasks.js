@@ -171,18 +171,16 @@ function getIndicesOfOddNumbers(numbers) {
   }, []);
 }
 
-/**
- * Returns the array of RGB Hex strings from the specified array of numbers.
- *
- * @param {array} arr - The input array.
- * @return {array} - The array of RGB Hex strings.
- *
- * @example
- *    getHexRGBValues([ 0, 255, 16777215]) => [ '#000000', '#0000FF', '#FFFFFF' ]
- *    getHexRGBValues([]) => []
- */
-function getHexRGBValues(/* arr */) {
-  throw new Error('Not implemented');
+function getHexRGBValues(arr) {
+  return arr.reduce((result, cur) => {
+    const res = result;
+    const val = Math.abs(cur).toString(16).toUpperCase();
+    const stringToAdd = Array.from({ length: 6 - val.length }, () => 0).join(
+      ''
+    );
+    res.push('#'.concat(stringToAdd, val));
+    return res;
+  }, []);
 }
 
 function getMaxItems(arr, n) {
@@ -225,19 +223,6 @@ function propagateItemsByPositionIndex(arr) {
     .flat(Infinity);
 }
 
-/**
- * Shifts an array by n positions. If n is negative, the array is shifted to the left;
- * if positive, it is shifted to the right.
- *
- * @param {array} arr - The array to be shifted.
- * @param {number} n - The number of positions to shift the array elements.
- * @return {array} - The shifted array.
- *
- * @example
- *    shiftArray([1, 2, 3, 4, 5], 2) => [4, 5, 1, 2, 3]
- *    shiftArray(['a', 'b', 'c', 'd'], -1) => ['b', 'c', 'd', 'a']
- *    shiftArray([10, 20, 30, 40, 50], -3) => [40, 50, 10, 20, 30]
- */
 function shiftArray(arr, n) {
   return arr.map((_, idx, a) => {
     if (n > 0) return a[(idx + n + 1) % a.length];
