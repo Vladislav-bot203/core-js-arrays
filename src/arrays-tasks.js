@@ -238,8 +238,11 @@ function propagateItemsByPositionIndex(arr) {
  *    shiftArray(['a', 'b', 'c', 'd'], -1) => ['b', 'c', 'd', 'a']
  *    shiftArray([10, 20, 30, 40, 50], -3) => [40, 50, 10, 20, 30]
  */
-function shiftArray(/* arr, n */) {
-  throw new Error('Not implemented');
+function shiftArray(arr, n) {
+  return arr.map((_, idx, a) => {
+    if (n > 0) return a[(idx + n + 1) % a.length];
+    return a[(idx - n) % a.length];
+  });
 }
 
 function sortDigitNamesByNumericOrder(arr) {
